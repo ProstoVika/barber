@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"/>
+</head>
+<body>
+<div class="header">
+    <nav class="navbar">
+        <div class="header-icon">
+            <a href="#">Our Story</a>
+            <a href="#">Our Team</a>
+            <a href="#">Services & Prices</a>
+            <a href="#">Who we are</a>
+        </div>
+
+        <div class="btn-header-logo">
+            <div class="btn-logo">
+                <span class="logo"></span>
+            </div>
+        </div>
+
+        <div class="header-contact">
+            <a href="pages/about/about.html">CONTACT</a>
+        </div>
+        <div id="line"></div>
+    </nav>
+</div>
+<!--<div class="header">-->
+<!--    <nav class="navbar">-->
+<!--        <div class="header-icon">-->
+<!--            <a href="#">Our Story</a>-->
+<!--            <a href="#">Our Team</a>-->
+<!--            <a href="#">Services & Prices</a>-->
+<!--            <a href="#">Who we are</a>-->
+
+<!--        </div>-->
+
+<!--        <div class="btn-header-logo">-->
+<!--            <div class="btn-logo">-->
+<!--                <span class="logo"></span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <a href="pages/about/about.html">CONTACT</a>-->
+<!--        <div id="line"></div>-->
+<!--    </nav>-->
+
+<!--</div>-->
+<div class="navbar-background-video">
+    <video autoplay muted loop>
+        <source src="./product-images/888.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- products -->
+<section class="products">
+    <!-- filters -->
+    <div class="filters-container">
+        <!-- search -->
+        <div class="search-box">
+            <input type="text" class="search-txt" value="" placeholder="Search by product name"/>
+            <button class="material-icons">search</button>
+        </div>
+        <!-- categories -->
+        <h4>Our products</h4>
+        <article class="companies">
+            <button class="company-btn" id="all">all</button>
+            <button class="company-btn" id="red">Hair styling</button>
+            <button class="company-btn" id="white">Hair care</button>
+            <button class="company-btn" id="rose">Conditioner</button>
+            <button class="company-btn" id="sparkling">Beard</button>
+        </article>
+        <h5>Price</h5>
+        <div class="price-form">
+            <input type="range" step="1" min="0" value="100" max="100" class="slider">
+            <span id="range-label">100 $</span>
+        </div>
+        <div class="buttons">
+            <button class="btn" type="reset" id="reset">Clear all</button>
+        </div>
+    </div>
+    <!-- products -->
+    <div class="products-container">
+        <!-- single product -->
+        <article class="product"></article>
+    </div>
+
+</section>
+<footer>
+    <div class="box">
+        <h3 class="meet">MEET?</h3>
+        <div class="social-icons">
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+    <span class="copyright"> 2024–2025 VIKA STUDIO – PEC: viktoriia.ianuta@gmail.com ©Copyright 2024. </span>
+</footer>
+
+</body>
+</html>
+
