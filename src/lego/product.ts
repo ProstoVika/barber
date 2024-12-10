@@ -17,7 +17,7 @@ export class ProductList {
     }
 
     public async fetchProducts(): Promise<void> {
-        const response: Response = await fetch("./products.json");
+        const response: Response = await fetch("/products.json");
         const data = await response.json();
 
         const cart: string = localStorage.getItem("cart") || "[]";
@@ -36,20 +36,13 @@ export class ProductList {
                 element.innerHTML = `
                 <div class="img-container">
                     <img src="${product.image}" class="product-img" alt="" />
-                    <button class="bag-btn" data-id="${product.id}">
-                        <i class="fa fa-shopping-cart"></i>ADD TO BAG</button>
                 </div>
                 <div class="product-footer">
                     <h5 class="product-name">${product.title}</h5>
                     <span class="company-btn">${product.company}</span>
-                    <span class="product-price">$${product.price}</span>
+                     <span class="product-price">£${product.price}</span>
                 </div>`;
 
-                const button: HTMLButtonElement = element.querySelector('.bag-btn') as HTMLButtonElement;
-                button.addEventListener('click', (event: Event): void => {
-                    event.preventDefault();
-
-                });
 
                 if (productDOM) {
                     productDOM.appendChild(element);

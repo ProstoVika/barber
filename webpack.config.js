@@ -7,6 +7,8 @@ module.exports = {
     entry: {
         main: './src/index.ts',
         about: './src/pages/about/about.ts',
+        products: './src/pages/products/products.ts',
+
     },
     mode: 'development',
     devServer: {
@@ -40,7 +42,10 @@ module.exports = {
                     },
                     'css-loader',
                 ],
+
+
             },
+
             {
                 test: /\.json$/,
                 loader: 'json-loader',
@@ -54,7 +59,6 @@ module.exports = {
                         options: {
                             name: '[name].[ext]',
                             outputPath: 'product-images/',
-
                         }
                     }
                 ]
@@ -64,6 +68,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', chunks:['main']}),
         new HtmlWebpackPlugin({ template: './src/pages/about/about.html', filename: 'pages/about/about.html', chunks:['about']}),
+        new HtmlWebpackPlugin({ template: './src/pages/products/products.html', filename: 'pages/products/products.html', chunks:['products']}),
+
+
+
+
         new CopyPlugin({
             patterns: [
                 { from: "./src/product-images", to: "product-images"},

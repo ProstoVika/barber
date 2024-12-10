@@ -5,8 +5,6 @@
  export class AboutController {
 
      constructor() {
-
-
          window.addEventListener('scroll', this.progressBar);
      }
      private progressBar(): void {

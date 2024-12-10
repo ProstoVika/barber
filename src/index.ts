@@ -18,7 +18,7 @@ export class MainController {
         this.line = document.getElementById('line')!;
 
         this.updateView();
-        window.addEventListener('scroll', this.progressBar);
+        window.addEventListener('scroll', this.progressBar.bind(this));
     }
     private progressBar() {
         let windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -28,11 +28,15 @@ export class MainController {
     }
 
     private updateView = async (): Promise<void> => {
-        await this.productList.fetchProducts();
-        const filteredProducts = this.filter.getFilteredProducts();
-        this.filter.filterRenderProducts(filteredProducts);
-        this.progressBar();
-    }
+        try {
+            await this.productList.fetchProducts();
+            const filteredProducts = this.filter.getFilteredProducts();
+            this.filter.filterRenderProducts(filteredProducts);
+            this.progressBar();
+        } catch (error) {
+            console.error("Error updating view:", error);
+        }
+    };
 }
 
 

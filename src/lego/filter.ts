@@ -6,14 +6,13 @@ export class Filter {
     private products: ProductInterface[];
     private searchWord: string;
     private company: string;
-    private priceRange: number;
+
 
     constructor(productList: ProductList) {
         this.productList = productList;
         this.products = [];
         this.searchWord = "";
         this.company = "";
-        this.priceRange = 100;
         this.initFilter();
     }
 
@@ -25,14 +24,12 @@ export class Filter {
         this.company = company;
     }
 
-    private setPriceRange(price: number): void {
-        this.priceRange = price;
-    }
+
 
     public filterProducts(): ProductInterface[] {
         return this.products.filter((product) => {
             return (
-                product.title.indexOf(this.searchWord) !== -1 && (this.company ? product.company === this.company : true) && product.price <= this.priceRange
+                product.title.indexOf(this.searchWord) !== -1 && (this.company ? product.company === this.company : true) && product.price
             );
         });
     }
@@ -57,8 +54,8 @@ export class Filter {
         this.upgradeProducts();
     }
 
-    public filterByPriceWine(price: number): void {
-        this.setPriceRange(price);
+    public filterByPriceWine(): void {
+
         this.upgradeProducts();
     }
 
@@ -74,7 +71,6 @@ export class Filter {
         }
         this.setSearchWord("");
         this.setCompany("");
-        this.setPriceRange(100);
         this.upgradeProducts();
         const rangeLabel = document.getElementById("range-label");
         if (rangeLabel) {
@@ -89,7 +85,7 @@ export class Filter {
         const sparklingButton = document.getElementById("sparkling");
         const allButton = document.getElementById("all");
         const searchInput = document.querySelector(".search-txt") as HTMLInputElement;
-        const slider = document.querySelector(".slider") as HTMLInputElement;
+
         const reset = document.querySelector("#reset");
 
         redButton?.addEventListener("click", (): void => {
@@ -119,29 +115,20 @@ export class Filter {
             });
         }
 
-        if (slider) {
-            const rangeLabel = document.getElementById("range-label");
-            if (rangeLabel) {
-                slider.addEventListener("input", (e: Event): void => {
-                    const price = parseInt((e.target as HTMLInputElement).value);
-                    rangeLabel.innerText = price + "$";
-                    this.filterByPriceWine(price);
-                });
-            }
-        }
 
         reset?.addEventListener("click", (): void => {
             this.setSearchWord('');
             this.setCompany('');
-            this.setPriceRange(100);
             this.resetFiltersWine();
         });
     }
 
     private async initFilter(): Promise<void> {
+        await this.productList.fetchProducts();
         const products: ProductInterface[] = await this.productList.getProducts();
         this.products = products;
         this.addEventListeners();
+        this.productList.renderList(products);
     }
 }
 

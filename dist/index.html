@@ -11,67 +11,55 @@
           crossorigin="anonymous"/>
 <script defer src="/main.bundle.js"></script></head>
 <body>
-<div class="header">
+<header class="header">
     <nav class="navbar">
+        <!-- Лінки навігації -->
         <div class="header-icon">
-            <a href="index.html">HOME</a>
-            <a href="pages/about/about.html">ABOUT US</a>
+            <a href="index.html">Our Story</a>
+            <a href="#">Our Team</a>
+            <a href="#">Services & Prices</a>
+            <a href="pages/products/products.html">Products</a>
         </div>
 
+        <!-- Логотип -->
         <div class="btn-header-logo">
             <div class="btn-logo">
                 <span class="logo"></span>
             </div>
         </div>
-        <div class="cart">
-            <button type="button" id="cart-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count-info">0</span>
-            </button>
 
-            <div class="cart-container">
-                <div class="cart-footer">
-                    <div class="cart-total"></div>
-                </div>
-            </div>
+        <!-- Контакти -->
+        <div class="header-contact">
+            <a href="pages/about/about.html">CONTACT</a>
         </div>
+
+
         <div id="line"></div>
     </nav>
-</div>
-<!-- products -->
-<section class="products">
-    <!-- filters -->
-    <div class="filters-container">
-        <!-- search -->
-        <div class="search-box">
-            <input type="text" class="search-txt" value="" placeholder="Search by product name"/>
-            <button class="material-icons">search</button>
-        </div>
-        <!-- categories -->
-        <h4>Assortment</h4>
-        <article class="companies">
-            <button class="company-btn" id="all">all</button>
-            <button class="company-btn" id="red">red</button>
-            <button class="company-btn" id="white">white</button>
-            <button class="company-btn" id="rose">rose</button>
-            <button class="company-btn" id="sparkling">sparkling</button>
-        </article>
-        <h5>Price</h5>
-        <div class="price-form">
-            <input type="range" step="1" min="0" value="100" max="100" class="slider">
-            <span id="range-label">100 $</span>
-        </div>
-        <div class="buttons">
-            <button class="btn" type="reset" id="reset">Clear all</button>
-        </div>
-    </div>
-    <!-- products -->
-    <div class="products-container">
-        <!-- single product -->
-        <article class="product"></article>
-    </div>
+</header>
 
+<div class="image-container">
+    <img src="product-images/3.jpg" alt="Description of the image" />
+</div>
+<!--<div class="navbar-background-video">-->
+<!--   -->
+
+
+<!--        <video autoplay muted loop preload="auto">-->
+
+<!--        <source src="product-images/888.mp4?cachebust=123" type="video/mp4">-->
+<!--        Your browser does not support the video tag.-->
+<!--    </video>-->
+<!--</div>-->
+
+<!-- products -->
+<section class="information">
+    <span>Our Story</span>
+     <span>The barbershop isn't just a place to get a haircut or a shave. It's the hub of community – where people got together to connect,
+         exchange ideas, just hang and feel like themselves. We created Blind Barber to do just that, provide high quality experiences and product to make you feel like the best you.
+         </span>
 </section>
+
 <footer>
     <div class="box">
         <h3 class="meet">MEET?</h3>
@@ -80,20 +68,11 @@
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a href="#">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#">
                 <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-                <i class="fab fa-pinterest"></i>
-            </a>
-            <a href="#">
-                <i class="fab fa-linkedin"></i>
             </a>
         </div>
     </div>
-    <span class="copyright"> 2022–2023 VIKA STUDIO – PEC: viktoriia.ianuta@gmail.com © Copyright 2023. </span>
+    <span class="copyright"> 2024–2025 VIKA STUDIO – PEC: viktoriia.ianuta@gmail.com ©Copyright 2024. </span>
 </footer>
 
 </body>

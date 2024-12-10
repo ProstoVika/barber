@@ -11,88 +11,55 @@
           crossorigin="anonymous"/>
 </head>
 <body>
-<div class="header">
+<header class="header">
     <nav class="navbar">
+        <!-- Лінки навігації -->
         <div class="header-icon">
-            <a href="#">Our Story</a>
+            <a href="index.html">Our Story</a>
             <a href="#">Our Team</a>
             <a href="#">Services & Prices</a>
-            <a href="#">Who we are</a>
+            <a href="pages/products/products.html">Products</a>
         </div>
 
+        <!-- Логотип -->
         <div class="btn-header-logo">
             <div class="btn-logo">
                 <span class="logo"></span>
             </div>
         </div>
 
+        <!-- Контакти -->
         <div class="header-contact">
             <a href="pages/about/about.html">CONTACT</a>
         </div>
+
+
         <div id="line"></div>
     </nav>
+</header>
+
+<div class="image-container">
+    <img src="product-images/3.jpg" alt="Description of the image" />
 </div>
-<!--<div class="header">-->
-<!--    <nav class="navbar">-->
-<!--        <div class="header-icon">-->
-<!--            <a href="#">Our Story</a>-->
-<!--            <a href="#">Our Team</a>-->
-<!--            <a href="#">Services & Prices</a>-->
-<!--            <a href="#">Who we are</a>-->
+<!--<div class="navbar-background-video">-->
+<!--   -->
 
-<!--        </div>-->
 
-<!--        <div class="btn-header-logo">-->
-<!--            <div class="btn-logo">-->
-<!--                <span class="logo"></span>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <a href="pages/about/about.html">CONTACT</a>-->
-<!--        <div id="line"></div>-->
-<!--    </nav>-->
+<!--        <video autoplay muted loop preload="auto">-->
 
+<!--        <source src="product-images/888.mp4?cachebust=123" type="video/mp4">-->
+<!--        Your browser does not support the video tag.-->
+<!--    </video>-->
 <!--</div>-->
-<div class="navbar-background-video">
-    <video autoplay muted loop>
-        <source src="./product-images/888.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
 
 <!-- products -->
-<section class="products">
-    <!-- filters -->
-    <div class="filters-container">
-        <!-- search -->
-        <div class="search-box">
-            <input type="text" class="search-txt" value="" placeholder="Search by product name"/>
-            <button class="material-icons">search</button>
-        </div>
-        <!-- categories -->
-        <h4>Our products</h4>
-        <article class="companies">
-            <button class="company-btn" id="all">all</button>
-            <button class="company-btn" id="red">Hair styling</button>
-            <button class="company-btn" id="white">Hair care</button>
-            <button class="company-btn" id="rose">Conditioner</button>
-            <button class="company-btn" id="sparkling">Beard</button>
-        </article>
-        <h5>Price</h5>
-        <div class="price-form">
-            <input type="range" step="1" min="0" value="100" max="100" class="slider">
-            <span id="range-label">100 $</span>
-        </div>
-        <div class="buttons">
-            <button class="btn" type="reset" id="reset">Clear all</button>
-        </div>
-    </div>
-    <!-- products -->
-    <div class="products-container">
-        <!-- single product -->
-        <article class="product"></article>
-    </div>
-
+<section class="information">
+    <span>Our Story</span>
+     <span>The barbershop isn't just a place to get a haircut or a shave. It's the hub of community – where people got together to connect,
+         exchange ideas, just hang and feel like themselves. We created Blind Barber to do just that, provide high quality experiences and product to make you feel like the best you.
+         </span>
 </section>
+
 <footer>
     <div class="box">
         <h3 class="meet">MEET?</h3>
@@ -102,9 +69,6 @@
             </a>
             <a href="#">
                 <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-                <i class="fab fa-linkedin"></i>
             </a>
         </div>
     </div>
