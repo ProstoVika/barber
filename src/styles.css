@@ -117,18 +117,66 @@ body .header .navbar #line {
   height: 2px;
   background-color: #f39c12;
 }
-body .image-container {
+body .navbar-background-video {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  height: 65vh;
-  border-radius: 10px;
-  overflow: hidden;
-}
-body .image-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+body .navbar-background-video video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: transform 0.1s ease-out;
+}
+body .story-section {
+  background-color: black;
+  color: white;
+  padding: 80px 0;
+}
+body .story-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body .story-image {
+  flex: 1;
+  padding-right: 40px;
+}
+body .story-image img {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+body .story-text {
+  flex: 1;
+}
+body .story-text h2 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+body .story-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 300;
+  text-align: justify;
+  margin: 0; /* Removes any unwanted margin */
+  padding: 0;
+}
+body .story-text .highlight {
+  color: #dbba34; /* Yellow text color */
+  font-weight: bold; /* Bold font */
 }
 body .products {
   width: 90vw;

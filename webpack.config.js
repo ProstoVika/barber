@@ -8,6 +8,8 @@ module.exports = {
         main: './src/index.ts',
         about: './src/pages/about/about.ts',
         products: './src/pages/products/products.ts',
+        services: './src/pages/services/services.ts',
+        team: './src/pages/team/team.ts',
 
     },
     mode: 'development',
@@ -69,8 +71,8 @@ module.exports = {
         new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', chunks:['main']}),
         new HtmlWebpackPlugin({ template: './src/pages/about/about.html', filename: 'pages/about/about.html', chunks:['about']}),
         new HtmlWebpackPlugin({ template: './src/pages/products/products.html', filename: 'pages/products/products.html', chunks:['products']}),
-
-
+        new HtmlWebpackPlugin({ template: './src/pages/services/services.html', filename: 'pages/services/services.html', chunks:['services']}),
+        new HtmlWebpackPlugin({ template: './src/pages/team/team.html', filename: 'pages/team/team.html', chunks:['team']}),
 
 
         new CopyPlugin({
