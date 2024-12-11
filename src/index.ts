@@ -9,7 +9,7 @@ export class MainController {
     private filter: Filter;
     private readonly productDOM: Element;
     private readonly line: HTMLElement;
-
+    private readonly content: HTMLElement;
 
     constructor() {
         this.productDOM = document.querySelector(".products-container")!;
@@ -17,14 +17,29 @@ export class MainController {
         this.filter = new Filter(this.productList);
         this.line = document.getElementById('line')!;
 
+        this.content = document.querySelector(".content")!;
         this.updateView();
         window.addEventListener('scroll', this.progressBar.bind(this));
+
+
+
+        window.addEventListener('scroll', this.handleScroll.bind(this));
     }
     private progressBar() {
         let windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
         let windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         let width_progress_line = (windowScroll / windowHeight) * 100;
         this.line.style.width = width_progress_line + '%';
+    }
+    private handleScroll() {
+        this.progressBar();
+
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > 90) {
+            this.content.classList.add("hidden");
+        } else {
+            this.content.classList.remove("hidden");
+        }
     }
 
     private updateView = async (): Promise<void> => {
@@ -37,6 +52,8 @@ export class MainController {
             console.error("Error updating view:", error);
         }
     };
+
+
 }
 
 

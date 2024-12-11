@@ -14,7 +14,7 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 14px;
-
+  }
     .header {
       margin: 0 auto;
       position: sticky;
@@ -140,278 +140,189 @@
       }
     }
 
-    .navbar-background-video {
+    .parallax-container {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+
+    .navbar-background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       z-index: -1;
+      overflow: hidden;
 
       video {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        position: relative;
+
         top: 0;
         left: 0;
         transition: transform 0.1s ease-out;
       }
     }
 
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #f1c305;
+      margin-top: 20%;
+      font-size: 1.6rem;
+      line-height: 1.4;
+      font-weight: 300;
+      transition: opacity 0.5s ease, transform 0.5s ease; /* Анімація для плавного зникнення */
+    }
+
+    .content.hidden {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
     .story-section {
       background-color: black;
       color: white;
-      padding: 80px 0;
-    }
+      padding: 0;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      height: 100vh;
+
 
     .story-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      align-items: center;
       max-width: 1200px;
       margin: 0 auto;
-    }
-
-    .story-image {
-      flex: 1;
-      padding-right: 40px;
-    }
-
-    .story-image img {
-      width: 100%;
-      height: 500px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    .story-text {
-      flex: 1;
+      height: 100%;
 
 
-     h2 {
-        font-size: 1.7rem;
-        margin-bottom: 20px;
-       font-weight: 300;
+      .story-image {
+        flex: 1;
+        max-width: 50%;
+        height: 100%;
+        position: relative; /* Для створення позиціонування контейнера */
+
       }
 
-     p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-       font-weight: 300;
-       text-align: justify;
-       margin: 0; /* Removes any unwanted margin */
-       padding: 0;
-           }
-      .highlight {
-        color: #dbba34; /* Yellow text color */
-        font-weight: bold; /* Bold font */
+
+      .story-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: inherit;
+        filter: blur(0);
+        z-index: 1;
       }
-    }
-
-    //.image-container {
-    //  display: flex;
-    //  justify-content: center;
-    //  align-items: center;
-    //  height: 65vh;
-    //  border-radius: 10px;
-    //  overflow: hidden;
-    //
-    //  img {
-    //    width: 100%;
-    //    height: auto;
-    //    object-fit: cover;
-    //  }
-    //}
-    .products {
-      width: 90vw;
-      display: grid;
-      grid-gap: 1rem;
-      max-width: 1120px;
-
-      .filters-container {
-        margin: 3rem;
-        font-weight: 600;
-        font-size: 1.1rem;
-
-        .search-box {
-          position: relative;
-          padding-bottom: 45px;
-
-          .search-txt {
-            position: absolute;
-            padding: 0 10px;
-            width: 230px;
-            height: 40px;
-            line-height: 40px;
-            border-color: transparent;
-            border-top: 1px solid rgb(21, 20, 20);
-            border-left: 1px solid rgb(21, 20, 20);
-            border-right: 1px solid rgb(21, 20, 20);
-          }
-
-          .material-icons {
-            position: absolute;
-            left: 190px;
-            top: 7px;
-            background-color: #fff;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            overflow: visible;
-
-            &:hover, &:focus {
-              color: #b4afaf;
-            }
-          }
-        }
-
-        h4 {
-          margin: 5px;
-          font-weight: 700;
-        }
-
-        .company-btn {
-          display: block;
-          margin: 0.25em 0;
-          padding: 0.25rem;
-          text-transform: capitalize;
-          background: transparent;
-          border-color: transparent;
-          cursor: pointer;
-          font-size: 1rem;
-
-          &:hover, &:focus {
-            color: #ba4331;
-          }
-        }
-
-        h5 {
-          margin: 5px;
-          font-weight: 700;
-        }
-
-        .price-form {
-          .slider {
-            -webkit-appearance: none;
-            height: 3.5px;
-            background: #110d0d;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-
-            &:hover {
-              opacity: 1;
-            }
-          }
-
-          .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            background: #ffffff;
-            border-radius: 7px;
-            cursor: pointer;
-            border: 1px solid #151414;
-          }
-
-          span {
-            color: #151414;
-          }
-        }
-
-        #reset {
-          display: block;
-          margin: 0.25em 0;
-          padding: 0.25rem;
-          text-transform: capitalize;
-          background: transparent;
-          border-color: transparent;
-          color: #838494;
-          text-decoration: underline;
-          cursor: pointer;
-          font-size: 0.8rem;
-
-          &:hover, &:focus {
-            color: #811010;
-          }
-        }
+      /* Для зображення */
+      .story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        position: relative;
       }
 
-      .products-container {
-        .img-container {
-          display: flex;
-          justify-content: center;
-          position: relative;
-          overflow: hidden;
-          max-width: 500px;
-          height: 25rem;
-          object-fit: fill;
+      /* Додавання градієнта для плавного переходу */
+      .story-image {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); /* Темніший градієнт для глибшого переходу */
+      }
 
-          &:hover .bag-btn {
-            transform: translateX(0);
-            transition: 1s all;
-            color: #ffffff;
-            background-color: #110d0d;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-          }
+      .story-text {
+        flex: 1;
+        max-width: 50%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: right;
+        height: 100%;
+        margin: 20px;
 
-          .product-img {
-            object-fit: cover;
-            -webkit-transition: all 1s ease;
-            transition: all 1s ease;
-
-            &:hover {
-
-              box-sizing: border-box;
-              cursor: pointer;
-            }
-          }
-
-          .bag-btn {
-            position: absolute;
-            top: 90%;
-            right: 0;
-            border: none;
-            text-transform: uppercase;
-            padding: 0.5rem 0.75rem;
-            letter-spacing: var(--mainSpacing);
-            font-weight: bold;
-            transition: 1s ease-in-out;
-            transform: translateX(100%);
-            cursor: pointer;
-
-            i {
-              margin-right: 0.5rem;
-            }
-          }
+        h2 {
+          font-size: 1.7rem;
+          margin-bottom: 20px;
+          font-weight: 300;
         }
 
-        .product-footer {
-          padding: 0.75rem;
-          text-align: center;
+        p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          font-weight: 300;
+          margin: 0;
+          padding: 0;
+          text-align: justify;
+          max-width: 100%;
+        }
 
-          .product-name {
-            margin-bottom: 0.25rem;
-            text-transform: capitalize;
-            font-size: 1.0rem;
-          }
-
-          .product-price {
-            margin-bottom: 0;
-            font-weight: 700;
-            font-size: 1rem;
-          }
+        .highlight {
+          color: #dbba34;
         }
       }
     }
+    }
+
+    .team-section {
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 40px 20px;
+      text-align: center;
+
+
+      .team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .team-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        font-weight: 300;
+        color: #141410;
+      }
+
+      .team-images {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
+
+      .team-member {
+        flex: 1;
+        max-width: 300px;
+
+        img {
+          width: 100%;
+          border-radius: 1px;
+          object-fit: cover;
+          height: 420px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: #555;
+        }
+      }
+    }
+
 
     footer {
       background-color: rgba(0, 0, 0, 0.9);
@@ -467,7 +378,6 @@
         margin-top: 0;
       }
     }
-  }
 
 
 @media screen and (max-width: 768px) {
@@ -497,6 +407,55 @@
     margin-top: 10px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .story-container {
+    flex-direction: column;
+  }
+
+  .story-image,
+  .story-text {
+    max-width: 100%;
+  }
+
+  .story-text {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .story-image img {
+    height: auto;
+  }
+
+  .story-text {
+    flex: 1;
+
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-weight: 300;
+      text-align: justify;
+      margin: 0;
+      padding: 0;
+    }
+
+    .highlight {
+      color: #dbba34;
+
+    }
+  }
+}
+
+
+
 
 @media screen and (min-width: 992px) {
   .products-container {
