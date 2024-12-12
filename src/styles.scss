@@ -278,7 +278,6 @@
       padding: 40px 20px;
       text-align: center;
 
-
       .team-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -322,7 +321,55 @@
         }
       }
     }
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 331px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  position: relative;
 
+  h2 {
+    color: #141410;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #141410;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: none;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #2f2927;
+      color: #fff;
+    }
+  }
+
+  .contact-line {
+    width: 80%;
+    height: 1px;
+    background-color: #333;
+    margin-top: 30px;
+  }
+}
 
     footer {
       background-color: rgba(0, 0, 0, 0.9);

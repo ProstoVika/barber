@@ -280,6 +280,51 @@ body {
   color: #555;
 }
 
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 331px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  position: relative;
+}
+.contact-us h2 {
+  color: #141410;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.contact-us p {
+  color: #141410;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.contact-us .contact-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: none;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  text-transform: capitalize;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.contact-us .contact-btn:hover {
+  background-color: #2f2927;
+  color: #fff;
+}
+.contact-us .contact-line {
+  width: 80%;
+  height: 1px;
+  background-color: #333;
+  margin-top: 30px;
+}
+
 footer {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
