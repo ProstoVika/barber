@@ -21,13 +21,13 @@
       position: sticky;
       top: 0;
       width: 100%;
-      min-height: 150px;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1;
       flex-direction: column;
-
+      min-height: 140px;
+      background-color: black;
       .navbar {
         min-height: 140px;
         background-color: rgb(19 17 17 / 80%);
@@ -43,9 +43,11 @@
         z-index: 1;
         padding: 0 60px;
         height: 70px;
+
         .header-icon {
           display: flex;
           gap: 40px;
+
           a {
             text-decoration: none;
             color: #ffffff;
@@ -89,12 +91,15 @@
           width: 65px;
           height: 65px;
 
-
+          flex-direction: column;
           .btn-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: relative;
-            width: 65px;
-            height: 65px;
-            cursor: pointer;
+            width: 70px;
+            height: 70px;
 
             .logo {
               display: block;
@@ -104,28 +109,61 @@
               background-size: cover;
               background-position: center;
               transition: transform 0.3s ease, box-shadow 0.3s ease;
+              border-radius: 50%;
 
 
               &:hover {
                 transform: scale(1.1);
               }
             }
+
+            .logotype {
+              display: block;
+              margin-top: 5px;
+              img {
+                width: 120px;
+                height: auto;
+                &:hover {
+                  transform: scale(1.1);
+                }
+              }
+            }
           }
         }
-        .header-contact{
+
+        .header-contact {
           a {
+            position: relative;
             text-decoration: none;
             color: #ffffff;
             font-size: 18px;
             font-weight: 300;
+            padding-bottom: 5px;
             transition: color 0.3s ease;
 
-            &:hover, &:focus {
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background-color: #f39c12;
+              transition: width 0.3s ease;
+            }
+
+            &:hover,
+            &:focus {
               color: #f39c12;
-              border-bottom: 2px solid #f39c12;
+            }
+
+            &:hover::after,
+            &:focus::after {
+              width: 100%;
             }
           }
         }
+
         #line {
           position: fixed;
           left: 0;
@@ -137,7 +175,6 @@
         }
       }
     }
-
 //price list
     .price-list {
       width: 100%;

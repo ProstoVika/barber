@@ -79,29 +79,24 @@ export class Filter {
     }
 
     public addEventListeners(): void {
-        const redButton = document.getElementById("red");
-        const whiteButton = document.getElementById("white");
-        const roseButton = document.getElementById("rose");
-        const sparklingButton = document.getElementById("sparkling");
+        const hairStyling = document.getElementById("hair styling");
+        const beard = document.getElementById("beard");
+        const hairCare = document.getElementById("hair care");
         const allButton = document.getElementById("all");
         const searchInput = document.querySelector(".search-txt") as HTMLInputElement;
 
         const reset = document.querySelector("#reset");
 
-        redButton?.addEventListener("click", (): void => {
-            this.filterByColorWine('red');
+        hairStyling?.addEventListener("click", (): void => {
+            this.filterByColorWine('hair styling');
         });
 
-        whiteButton?.addEventListener("click", (): void => {
-            this.filterByColorWine('white');
+        beard?.addEventListener("click", (): void => {
+            this.filterByColorWine('beard');
         });
 
-        roseButton?.addEventListener("click", (): void => {
-            this.filterByColorWine('rose');
-        });
-
-        sparklingButton?.addEventListener("click", (): void => {
-            this.filterByColorWine('sparkling');
+        hairCare?.addEventListener("click", (): void => {
+            this.filterByColorWine('hair care');
         });
 
         allButton?.addEventListener("click", (): void => {

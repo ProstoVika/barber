@@ -81,12 +81,16 @@ body {
   transform: translateX(-50%);
   width: 65px;
   height: 65px;
+  flex-direction: column;
 }
 .header .navbar .btn-header-logo .btn-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 65px;
-  height: 65px;
-  cursor: pointer;
+  width: 70px;
+  height: 70px;
 }
 .header .navbar .btn-header-logo .btn-logo .logo {
   display: block;
@@ -96,20 +100,46 @@ body {
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
 }
 .header .navbar .btn-header-logo .btn-logo .logo:hover {
   transform: scale(1.1);
 }
+.header .navbar .btn-header-logo .btn-logo .logotype {
+  display: block;
+  margin-top: 5px;
+}
+.header .navbar .btn-header-logo .btn-logo .logotype img {
+  width: 120px;
+  height: auto;
+}
+.header .navbar .btn-header-logo .btn-logo .logotype img:hover {
+  transform: scale(1.1);
+}
 .header .navbar .header-contact a {
+  position: relative;
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
   font-weight: 300;
+  padding-bottom: 5px;
   transition: color 0.3s ease;
+}
+.header .navbar .header-contact a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f39c12;
+  transition: width 0.3s ease;
 }
 .header .navbar .header-contact a:hover, .header .navbar .header-contact a:focus {
   color: #f39c12;
-  border-bottom: 2px solid #f39c12;
+}
+.header .navbar .header-contact a:hover::after, .header .navbar .header-contact a:focus::after {
+  width: 100%;
 }
 .header .navbar #line {
   position: fixed;
@@ -148,12 +178,12 @@ body {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #f1c305;
+  color: #D4AF37;
   margin-top: 20%;
   font-size: 1.6rem;
   line-height: 1.4;
   font-weight: 300;
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Анімація для плавного зникнення */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .content.hidden {
@@ -177,14 +207,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
-  /* Для зображення */
-  /* Додавання градієнта для плавного переходу */
 }
 .story-section .story-container .story-image {
   flex: 1;
   max-width: 50%;
   height: 100%;
-  position: relative; /* Для створення позиціонування контейнера */
+  position: relative;
 }
 .story-section .story-container .story-image::before {
   content: "";
